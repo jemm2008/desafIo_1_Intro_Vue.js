@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- ajuste del Viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/img/vue-ppal.png" >
+        <!-- Importar fuente de google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+        <!-- Importar FONT Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+        <!-- link a hoja de estilos CSS
+        <link rel="stylesheet" href="assets/css/style.css"> -->
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- título a mostrar en pestaña del Navegador-->
+        <title>Mi Primer VUE.js</title>
+    </head>
+
+    <body>
+
+        <section id="vue-section">
+            <div id="div-app" class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="mt-5 d-flex flex-row justify-content-around bg-info">
+                            <img :src="ruta_logo" alt="logo" width="50" class="align-self-center border border-success p-1">
+                            <h2 class="my-0 py-2 text-danger me-5">{{title}}</h2>
+                        </div>
+                        <table class="table table-dark table-striped mt-1">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th  class="text-center" scope="col">RUN</th>
+                                    <th scope="col">Fecha de Nacimiento</th>
+                                    <th scope="col">Edad</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>{{usuarios[0].nombre}}</td>
+                                    <td>{{usuarios[0].apellido}}</td>
+                                    <td>{{usuarios[0].RUN}}</td>
+                                    <td class="text-center">{{usuarios[0].fechaN}}</td>
+                                    <td class="text-center">{{usuarios[0].edad}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>{{usuarios[1].nombre}}</td>
+                                    <td>{{usuarios[1].apellido}}</td>
+                                    <td>{{usuarios[1].RUN}}</td>
+                                    <td class="text-center">{{usuarios[1].fechaN}}</td>
+                                    <td class="text-center">{{usuarios[1].edad}}</td>
+                                </tr>                        
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>{{usuarios[2].nombre}}</td>
+                                    <td>{{usuarios[2].apellido}}</td>
+                                    <td>{{usuarios[2].RUN}}</td>
+                                    <td class="text-center">{{usuarios[2].fechaN}}</td>
+                                    <td class="text-center">{{usuarios[2].edad}}</td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- JQuery from STACKPATH CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Vue.js development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- Your personal Scripts down this line -->
+    <script>
+        const app = new Vue ({
+    el:"#div-app",
+    data: {
+        title: "Vue.js - June - New Users Table",
+        usuarios : [
+                    {
+                    nombre: "Jose J.",
+                    apellido: "Jimenez",
+                    RUN: "11.123.123-3",
+                    fechaN: "03-03-1991", //fecha de nacimiento
+                    edad: 30
+                    },
+//      
+                    {
+                    nombre: "Pedro",
+                    apellido: "Perdomo",
+                    RUN: "17.175.175-7",
+                    fechaN: "11-02-2001", //fecha de nacimiento
+                    edad:21
+                    },
+//      
+                    {
+                    nombre: "Diego",
+                    apellido: "Diaz",
+                    RUN: "23.875.875-K",
+                    fechaN: "07-04-2003", //fecha de nacimiento
+                    edad: 19
+                    }
+                    ],
+        ruta_logo: "assets/img/vue-ppal.png"
+    }
+})
+    </script>
+    </body>
+</html>
